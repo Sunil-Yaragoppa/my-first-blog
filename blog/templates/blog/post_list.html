@@ -7,7 +7,7 @@
             <h1><a href="/">Sunny's Blog</a></h1>
         </div>
 
-        <div>
+        <!--<div>
             <p>published: 14.06.2019, 12:14</p>
             <h2><a href="">What is happiness?</a></h2>
             <p>Happiness is used in the context of mental or emotional states, including positive or pleasant emotions ranging from contentment to intense joy. It is also used in the context of life satisfaction, subjective well-being, eudaimonia, flourishing and well-being.</p>
@@ -17,6 +17,16 @@
             <p>published: 14.06.2014, 12:14</p>
             <h2><a href="">Being optimistic</a></h2>
             <p>Optimism is a mental attitude reflecting a belief or hope that the outcome of some specific endeavor, or outcomes in general, will be positive, favorable, and desirable. ... Being optimistic, in the typical sense of the word, is defined as expecting the best possible outcome from any given situation.</p>
-        </div>
+        </div> 
+        {{ posts }} -->
+
+        {% for post in posts %}
+        	<div>
+        		<p>published: {{ post.published_date }}</p>
+        		<h2><a href="">{{ post.title }}</a></h2>
+        		<p>{{ post.text|linebreaksbr }}</p>
+        	</div>
+        {% endfor %}
+
     </body>
 </html>
